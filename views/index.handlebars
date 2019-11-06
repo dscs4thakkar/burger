@@ -1,0 +1,87 @@
+<div class="container">
+  <!--Jumbotron-->
+  <div class="jumbotron text-center bg-primary text-white">
+    <h1 class="display-4" id="app-title">Giant Burger<img src="../public/assets/images/burger.jpg"></h1>
+    <p class="lead">Welcome to Giant Burger. Home of the Yummy Burger.</p>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card border border-primary">
+        <div class="card-header bg-primary text-white">
+         Place your order!!
+        </div>
+        <!--Create/add burger form-->
+        <div class="card-body">
+          <form class="create-form">
+            <div class="form-group">
+              <label for="burger">Your order:</label>
+              <input type="text" class="form-control" id="burgerToGo" placeholder="">
+            </div>
+            <button class="btn btn-primary" id="submit" type="submit">Place order</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="row mt-4">
+    <div class="col-md-6 mt-4">
+      <div class="card border border-primary">
+        <div class="card-header bg-primary text-white">
+         Burgers
+        </div>
+        <!--Div to hold burgers that have not been devoured yet-->
+        <div class="card-body">
+              {{#each burger}}
+                {{#unless this.devoured}}
+                <div class="col-md-9 text-center">
+                    <pre>{{this.id}}. {{this.burger_name}}
+                    </pre>
+                    <!-- {{this.Date}} -->
+                </div>
+                <div class="col-md-3 text-center">
+                    <form class="devour-form button-size">
+                        <input input type="hidden" class="burger_id" type="text" ><br>
+                        <button type="submit" class="btn btn-default" value={{this.id}}>Devour it!</button>
+                    </form>
+                </div>
+                {{/unless}}
+              {{/each}}
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 mt-4">
+      <div class="card devoured-card">
+        <div class="card-header text-white" id="devoured-card-header">
+         Devoured burgers
+        </div>
+        <!--When a burger has been devoured, put burger here-->
+        <div class="card-body">
+          {{#each burger}}
+              {{#if this.devoured}}
+              <input class="form-control" type="text" placeholder="{{this.id}} . {{this.burger_name}}" readonly>
+              {{/if}}
+          {{/each}}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Footer-->
+  <div class="row mt-5">
+    <div class="col-md-12">
+      <div class="card footer">
+        <div class="card-body footer-body text-white">
+          <h5 class="card-title text-white">Giant Burger</h5>
+          <p class="card-text">Welcome to Giant Burger. Home of the Yummy Burger.</p>
+          <a href="https://github.com/dscs4thakkar/burger" class="btn btn-primary mr-2" target="_blank">GitHub Repo</a>
+          <a href="#" class="btn btn-primary" target="_blank">LinkedIn</a>
+          <br>
+          <br>
+        </div>
+      </div>
+    </div>
+</div>
