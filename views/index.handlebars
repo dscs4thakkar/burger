@@ -1,7 +1,7 @@
 <div class="container">
   <!--Jumbotron-->
   <div class="jumbotron text-center bg-primary text-white">
-    <h1 class="display-4" id="app-title">Giant Burger<img src="../public/assets/images/burger.jpg"></h1>
+    <h1 class="display-4" id="app-title">Giant Burger</h1>
     <p class="lead">Welcome to Giant Burger. Home of the Yummy Burger.</p>
   </div>
 
@@ -39,12 +39,12 @@
                 <div class="col-md-9 text-center">
                     <pre>{{this.id}}. {{this.burger_name}}
                     </pre>
-                    <!-- {{this.Date}} -->
+                
                 </div>
                 <div class="col-md-3 text-center">
                     <form class="devour-form button-size">
                         <input input type="hidden" class="burger_id" type="text" ><br>
-                        <button type="submit" class="btn btn-default" value={{this.id}}>Devour it!</button>
+                        <button type="submit" class="btn btn-primary" value={{this.id}}>Devour it!</button>
                     </form>
                 </div>
                 {{/unless}}
@@ -55,7 +55,9 @@
 
     <div class="col-md-6 mt-4">
       <div class="card devoured-card">
-        <div class="card-header text-white" id="devoured-card-header">
+        <div class="card-header bg-primary text-white" id="devoured-card-header">
+
+
          Devoured burgers
         </div>
         <!--When a burger has been devoured, put burger here-->
